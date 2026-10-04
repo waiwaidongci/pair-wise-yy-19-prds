@@ -19,7 +19,7 @@
     <section class="layout">
       <form id="sampleForm" class="editor">
         <h2>样本录入</h2>
-        <label>显微照片<input id="photoInput" type="file" accept="image/*"></label>
+        <label>显微照片（可一次选多张形成导入批次）<input id="photoInput" type="file" accept="image/*" multiple></label>
         <label>样本编号<input name="code" required placeholder="BX-17-03"></label>
         <label>采样地点<input name="location" placeholder="剖面东侧第二层"></label>
         <div class="pair">
@@ -39,6 +39,11 @@
       </form>
 
       <section class="board">
+        <div id="batchBar" class="batch-bar" hidden>
+          <span id="batchProgress"></span>
+          <button id="evictBtn" type="button">回收旧图</button>
+          <span id="storageMeter" class="storage-meter"></span>
+        </div>
         <div class="filters">
           <input id="mineralFilter" placeholder="按矿物筛选">
           <select id="polarFilter">

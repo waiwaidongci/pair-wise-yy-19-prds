@@ -134,6 +134,66 @@ textarea {
   padding: 12px;
 }
 
+.batch-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f3f8f5;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.batch-bar[hidden] {
+  display: none;
+}
+
+#batchProgress {
+  flex: 1;
+}
+
+#batchProgress[data-error="1"] {
+  color: #a05a2c;
+}
+
+.batch-bar button {
+  min-height: 32px;
+  margin: 0;
+  background: #e8f0eb;
+  color: var(--ink);
+}
+
+.storage-meter {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.photo-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  background: #dfe9e4;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
+}
+
+.hash-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hash-line code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 11.5px;
+  color: var(--accent);
+}
+
 .filters {
   display: grid;
   grid-template-columns: 1fr 180px;
