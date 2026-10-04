@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>岩芯薄片显微照片索引台</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="mast">
+      <div>
+        <p>Petrographic Slide Index</p>
+        <h1>岩芯薄片显微照片索引台</h1>
+      </div>
+      <button id="exportBtn" type="button">导出观察清单</button>
+    </header>
+
+    <section class="layout">
+      <form id="sampleForm" class="editor">
+        <h2>样本录入</h2>
+        <label>显微照片<input id="photoInput" type="file" accept="image/*"></label>
+        <label>样本编号<input name="code" required placeholder="BX-17-03"></label>
+        <label>采样地点<input name="location" placeholder="剖面东侧第二层"></label>
+        <div class="pair">
+          <label>放大倍数<input name="magnification" placeholder="40x"></label>
+          <label>偏光类型
+            <select name="polarization">
+              <option>单偏光</option>
+              <option>正交偏光</option>
+              <option>反射光</option>
+            </select>
+          </label>
+        </div>
+        <label>主要矿物<input name="minerals" placeholder="石英、斜长石、黑云母"></label>
+        <label>颗粒结构<input name="texture" placeholder="半自形粒状、碎裂结构"></label>
+        <label>老师批注<textarea name="comment" rows="4" placeholder="记录鉴定依据或疑点"></textarea></label>
+        <button type="submit">保存样本</button>
+      </form>
+
+      <section class="board">
+        <div class="filters">
+          <input id="mineralFilter" placeholder="按矿物筛选">
+          <select id="polarFilter">
+            <option value="">全部偏光</option>
+            <option>单偏光</option>
+            <option>正交偏光</option>
+            <option>反射光</option>
+          </select>
+        </div>
+        <div id="sampleGrid" class="sample-grid"></div>
+      </section>
+
+      <aside class="compare">
+        <h2>并排对比</h2>
+        <div id="comparePane" class="compare-pane"></div>
+      </aside>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
