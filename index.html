@@ -12,13 +12,24 @@
       <div>
         <p>Petrographic Slide Index</p>
         <h1>岩芯薄片显微照片索引台</h1>
+        <p id="quotaLine" class="quota-line"></p>
       </div>
       <button id="exportBtn" type="button">导出观察清单</button>
     </header>
 
+    <section class="batches-panel">
+      <div class="batches-head">
+        <h2>照片批次导入</h2>
+        <button id="importBatchBtn" type="button">选择多张照片导入</button>
+        <input id="batchInput" type="file" accept="image/*" multiple hidden>
+      </div>
+      <div id="batchList" class="batch-list"></div>
+    </section>
+
     <section class="layout">
       <form id="sampleForm" class="editor">
         <h2>样本录入</h2>
+        <input id="editId" type="hidden" name="editId" value="">
         <label>显微照片<input id="photoInput" type="file" accept="image/*"></label>
         <label>样本编号<input name="code" required placeholder="BX-17-03"></label>
         <label>采样地点<input name="location" placeholder="剖面东侧第二层"></label>
@@ -35,7 +46,10 @@
         <label>主要矿物<input name="minerals" placeholder="石英、斜长石、黑云母"></label>
         <label>颗粒结构<input name="texture" placeholder="半自形粒状、碎裂结构"></label>
         <label>老师批注<textarea name="comment" rows="4" placeholder="记录鉴定依据或疑点"></textarea></label>
-        <button type="submit">保存样本</button>
+        <div class="form-actions">
+          <button type="submit">保存样本</button>
+          <button id="cancelEditBtn" type="button" class="ghost" hidden>取消编辑</button>
+        </div>
       </form>
 
       <section class="board">
